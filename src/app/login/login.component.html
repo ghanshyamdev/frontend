@@ -1,0 +1,109 @@
+<div class="login-page">
+  <div class="login-card">
+        <ngb-tabset class="login-card-tab">
+          <ngb-tab>
+            <ng-template ngbTabTitle><b>Log In</b></ng-template>
+            <ng-template ngbTabContent>
+              <h6 class="text-center">Welcome Back!</h6>
+              <form name="form" (ngSubmit)="loginForm.form.valid && onSubmit('login')" #loginForm="ngForm">
+                <div class="form-group mb-4 pb-2">
+                  <input type="email"
+                         class="form-control"
+                         id="loginFormInputEmail1"
+                         name="loginFormInputEmail1"
+                         [(ngModel)]="loginModel.emailId"
+                         #loginemailId="ngModel"
+                         [ngClass]="{ 'is-invalid': loginForm.submitted && loginemailId.invalid }"
+                         required
+                         placeholder="Email Address*">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="password"
+                         class="form-control"
+                         id="loginFormInputPassword"
+                         name="loginFormInputPassword"
+                         [(ngModel)]="loginModel.password"
+                         #loginpassword="ngModel"
+                         [ngClass]="{ 'is-invalid': loginForm.submitted && loginpassword.invalid }"
+                         required
+                         placeholder="Password*">
+                </div>
+                <div class="form-forgot mb-3">
+                  <a href="#">Forgot Passowrd?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">LOG IN</button>
+              </form>
+            </ng-template>
+          </ngb-tab>
+
+          <ngb-tab>
+            <ng-template ngbTabTitle><b>Sign Up</b></ng-template>
+            <ng-template ngbTabContent>
+              <h6 class="text-center">Sign Up for Free</h6>
+              <form name="form" (ngSubmit)="f.form.valid && onSubmit('signup')" #f="ngForm">
+                <div class="row mb-4 pb-2">
+                  <div class="col-6">
+                    <div class="form-group mb-0">
+                      <input type="text"
+                             class="form-control"
+                             id="exampleInputFirstName"
+                             name="firstName"
+                             [(ngModel)]="model.firstName"
+                             #firstName="ngModel"
+                             [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }"
+                             required
+                             placeholder="First Name*">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group mb-0">
+                      <input type="text"
+                             class="form-control"
+                             id="exampleInputLastName"
+                             name="lastName"
+                             [(ngModel)]="model.lastName"
+                             #lastName="ngModel"
+                             [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }"
+                             required
+                             placeholder="Last Name*">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group mb-4 pb-2">
+                  <input type="email"
+                         class="form-control"
+                         id="exampleInputEmail1"
+                         name="emailId"
+                         [(ngModel)]="model.emailId"
+                         #emailId="ngModel"
+                         [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }"
+                         required
+                         placeholder="Email Address*">
+                </div>
+                <div class="form-group mb-4 pb-2">
+                  <input type="password"
+                         class="form-control"
+                         id="exampleInputPassword"
+                         name="password"
+                         [(ngModel)]="model.password"
+                         #password="ngModel"
+                         [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+                         required
+                         placeholder="Set A Password*">
+                  <div *ngIf="!showSuccess">
+                    <div style="color: red;" *ngIf="showInvalidPassword">
+                      {{ showInvalidPassword }}
+                    </div>
+                  </div>       
+                
+                  <div style="color: green;" *ngIf="showSuccess">
+                    {{showSuccess}}
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">GET STARTED</button>
+              </form>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+</div>

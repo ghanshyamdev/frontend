@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "a1",
+    "desc": "a1",
+    "price": 10,
+    "rating": 10,
+    "imageURL": "https://products.drivebird.com/wp-content/uploads/2018/12/article.jpg",
+    "createdAt": "2019-10-12T11:19:55.400Z",
+    "updatedAt": "2019-10-12T11:19:55.400Z"
+  },
+  {
+    "id": 2,
+    "title": "a2",
+    "desc": "a2",
+    "price": 20,
+    "rating": 20,
+    "imageURL": "https://products.drivebird.com/wp-content/uploads/2018/12/article.jpg",
+    "createdAt": "2019-10-12T11:20:10.712Z",
+    "updatedAt": "2019-10-12T11:20:10.712Z"
+  },
+  {
+    "id": 3,
+    "title": "a3",
+    "desc": "a3",
+    "price": 30,
+    "rating": 30,
+    "imageURL": "https://products.drivebird.com/wp-content/uploads/2018/12/article.jpg",
+    "createdAt": "2019-10-12T11:20:19.403Z",
+    "updatedAt": "2019-10-12T11:20:19.403Z"
+  },
+  {
+    "id": 4,
+    "title": "a4",
+    "desc": "a4",
+    "price": 40,
+    "rating": 40,
+    "imageURL": "https://products.drivebird.com/wp-content/uploads/2018/12/article.jpg",
+    "createdAt": "2019-10-12T11:20:29.135Z",
+    "updatedAt": "2019-10-12T11:20:29.135Z"
+  },
+  {
+    "id": 5,
+    "title": "a5",
+    "desc": "a5",
+    "price": 50,
+    "rating": 50,
+    "imageURL": "https://products.drivebird.com/wp-content/uploads/2018/12/article.jpg",
+    "createdAt": "2019-10-12T11:20:41.684Z",
+    "updatedAt": "2019-10-12T11:20:41.684Z"
+  }
+]

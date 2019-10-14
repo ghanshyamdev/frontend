@@ -1,0 +1,128 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ng-container *ngIf="showForm">
+        <form name="form" (ngSubmit)="onSubmit()" #addData="ngForm">
+          <div class="form-group mb-4 pb-2">
+            <input type="file"
+                   name="profile"
+                   class="form-control"
+                   id="filePhoto"
+                   name="filePhoto"
+                   required
+                   (change)="onFileSelect($event)" />
+          </div>
+          <div class="form-group mb-4 pb-2">
+            <input type="text"
+                   class="form-control"
+                   id="txtName"
+                   name="txtName"
+                   [(ngModel)]="experienceModel.name"
+                   #expName="ngModel"
+                   [ngClass]="{ 'is-invalid': addData.submitted && expName.invalid }"
+                   required
+                   placeholder="Name*">
+          </div>
+          <div class="form-group mb-3">
+        <textarea name="description"
+                  required
+                  class="form-control"
+                  [(ngModel)]="experienceModel.description"
+                  id="description"
+                  cols="30"
+                  rows="10"></textarea>
+          </div>
+          <div class="form-group mb-4 pb-2">
+            <input type="text"
+                   class="form-control"
+                   id="txtPrice"
+                   name="txtPrice"
+                   [(ngModel)]="experienceModel.price"
+                   #expPrice="ngModel"
+                   [ngClass]="{ 'is-invalid': addData.submitted && expPrice.invalid }"
+                   required
+                   placeholder="Price*">
+          </div>
+          <div class="form-group mb-4 pb-2">
+            <input type="text"
+                   class="form-control"
+                   id="txtRating"
+                   name="txtName"
+                   [(ngModel)]="experienceModel.rating"
+                   #expRating="ngModel"
+                   [ngClass]="{ 'is-invalid': addData.submitted && expRating.invalid }"
+                   required
+                   placeholder="Rating*">
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+          <button class="ml-2 btn btn-primary" (click)="showForm = false">Cancel</button>
+        </form>
+      </ng-container>
+      <ng-container *ngIf="!showForm">
+        <button (click)="showForm = !showForm" class="btn btn-primary">Add New Experience</button>
+      </ng-container>
+    </div>
+  </div>
+  <div class="row" *ngIf="!showForm">
+    <div class="col-md-12">
+      <div class="grid-datatable mt-3">
+        <ngx-datatable
+          class="table"
+          [columnMode]="'flex'"
+          [columns]="columns"
+          [footerHeight]="50"
+          [rows]="rows">
+          <ngx-datatable-column [flexGrow]="2">
+            <ng-template ngx-datatable-header-template>
+              <p>TITLE</p>
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              <p>{{ row.title }}</p>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column [flexGrow]="1">
+            <ng-template ngx-datatable-header-template>
+              <p>DESCRIPTION</p>
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              <p>{{ row.desc }}</p>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column [flexGrow]="1">
+            <ng-template ngx-datatable-header-template>
+              <p>PRICE</p>
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              <p>{{ row.price }}</p>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column [flexGrow]="1">
+            <ng-template ngx-datatable-header-template>
+              <p>RATING</p>
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              {{ row.rating }}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column [flexGrow]="1">
+            <ng-template ngx-datatable-header-template>
+              <p>PHOTO</p>
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              <img [src]="row.imageURL" height="30" width="50" alt="">
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column [flexGrow]="1">
+            <ng-template ngx-datatable-header-template>
+              <p>ACTION</p>
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              <button class="btn btn-danger" (click)='onDeleteRow(row)'>Delete</button>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>
+</div>

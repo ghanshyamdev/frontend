@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5">
+  <div class="container-fluid px-0">
+    <a class="navbar-brand">
+      <img class="img-pointer" height="50" width="50" src="assets/img/fabric.svg" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active" (click)="router.navigate(['/landing'])">
+          <a class="nav-link" (click)="isShown = false" >Home</a>
+        </li>
+        <li class="nav-item" *ngIf="showItem" (click)="router.navigate(['/admin'])">
+          <a class="nav-link" (click)="isShown = false" >Manage Article</a>
+        </li>
+        <li class="nav-item" (click)="this.auth.logout()">
+          <a class="nav-link" >Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

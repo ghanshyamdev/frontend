@@ -1,0 +1,57 @@
+::ng-deep .grid-datatable {
+  .ngx-datatable {
+    .datatable-header {
+      height: auto !important;
+      .datatable-header-cell {
+        padding: 12px 10px;
+        background: #f2f2f2;
+        p {
+          font-weight: bold;
+          margin-bottom: 0;
+          display: inline-block;
+        }
+      }
+    }
+    .datatable-body {
+      datatable-selection {
+        display: flex;
+        .datatable-row-wrapper {
+          .datatable-body-row {
+            height: auto !important;
+            .datatable-body-cell {
+              border-top: 1px solid #f2f2f2;
+              border-left: 1px solid #f2f2f2;
+              padding: 5px 8px;
+              height: auto !important;
+              p {
+                margin-bottom: 0;
+                display: inline-block;
+              }
+              &:last-child {
+                border-right: 1px solid #f2f2f2;
+              }
+              &-label {
+                display: flex;
+                height: 100%;
+                align-items: center;
+              }
+            }
+            &:hover {
+              background-color: #f7f7f7;
+            }
+          }
+          &:last-child {
+            .datatable-body-cell {
+              border-bottom: 1px solid #f2f2f2;
+            }
+          }
+        }
+      }
+    }
+   .datatable-footer {
+      background: #f2f2f2;
+      padding: 0 15px;
+     font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="landing-component">
+  <div class="container">
+    <div class="row align-items-center mb-4">
+      <div class="col-md-6">
+        <h2>Experiences in Paris</h2>
+      </div>
+    </div>
+    <div class="product-slider">
+      <div class="row">
+        <div class="col-md-12">
+          <owl-carousel #owlElement [options]="carouselOptions" [items]="articles" [carouselClasses]="['owl-theme', 'sliding']">
+            <div class="item" *ngFor="let article of articles; let i= index">
+              <div class="product-img">
+                <img class="slide-image" src="{{article.imageURL}}" >
+              </div>
+              <div class="product-text py-2">
+                <span class="color-drk">{{ article.title }}</span>
+                <h4 class="my-1">{{article.desc}}</h4>
+                <p>${{ article.price }} per person</p>
+                <div class="product-rating d-flex">
+                  <div class="rating-list mr-2">
+                    <fieldset class="rating">
+                      <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars" style="color: green;"></label>
+                      <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars" style="color: green;"></label>
+                      <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars" style="color: green;"></label>
+                      <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars" style="color: green;"></label>
+                      <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars" style="color: green;"></label>
+                      <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars" style="color: green;"></label>
+                      <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars" style="color: green;"></label>
+                      <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars" style="color: green;"></label>
+                      <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star" style="color: green;"></label>
+                      <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars" style="color: green;"></label>
+                    </fieldset>
+                  </div>
+                  <span>{{ article.rating }}</span>
+                </div>
+              </div>
+            </div>
+          </owl-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
